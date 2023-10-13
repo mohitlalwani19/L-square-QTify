@@ -14,13 +14,20 @@
   margin: 0;
 }
 
-html,body {
+html,
+body {
   height: 100%;
 }
 
 body {
   background-color: var(--color-dark);
-  font-family: "Poppins",sans-serif;
-  color:var(--color-bright);
+  font-family: "Poppins", sans-serif;
+  color: var(--color-bright);
   overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
