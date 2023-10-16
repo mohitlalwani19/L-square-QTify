@@ -1,7 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/HeroSection";
-import Card from "./components/Card";
+import Section from "./components/carousel/Section";
 import { useState, useEffect } from "react";
 import { extractTopAlbumsData } from "./apis/api";
 
@@ -25,10 +25,8 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      <div className="flexbox">
-        {topAlbumsData.map((item) => {
-          return <Card data={item} type="album" />;
-        })}
+      <div>
+        <Section data={topAlbumsData} type="album" title="Top Albums" />
       </div>
     </div>
   );

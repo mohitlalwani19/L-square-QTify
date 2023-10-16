@@ -13,7 +13,9 @@
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/material": "5.14.13",
-    "axios": "1.5.1"
+    "axios": "1.5.1",
+    "react-swiper": "0.1.5",
+    "swiper": "10.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
