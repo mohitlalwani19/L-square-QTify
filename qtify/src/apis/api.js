@@ -10,3 +10,12 @@ export let extractTopAlbumsData = async () => {
     console.error(err);
   }
 };
+
+export let extractNewAlbumsData = async () => {
+  try {
+    let res = await axios.get(`${endpoint}/albums/new`);
+    return res;
+  } catch (err) {
+    console.error(err);
+  }
+};

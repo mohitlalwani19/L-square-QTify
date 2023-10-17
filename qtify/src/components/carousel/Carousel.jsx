@@ -31,7 +31,7 @@ let Carousel = ({ data, renderComponent }) => {
         <CarouselLeftNavigation />
         <CarouselRightNavigation />
         {data.map((item) => {
-          <SwiperSlide>{renderComponent(item)}</SwiperSlide>;
+          return <SwiperSlide>{renderComponent(item)}</SwiperSlide>;
         })}
       </Swiper>
     </div>

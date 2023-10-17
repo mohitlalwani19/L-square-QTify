@@ -11,12 +11,12 @@ let Section = ({ data, type, title }) => {
   };
 
   return (
-    <div>
+    <div className={styles.section}>
       <div className={styles.header}>
-        <h4>{title}</h4>
-        <h5 className={styles.toggleText} onClick={handleToggle}>
+        <h3>{title}</h3>
+        <h4 className={styles.toggleText} onClick={handleToggle}>
           {carouselToggle ? "Show All" : "Collapse All"}
-        </h5>
+        </h4>
       </div>
       {data.length === 0 ? (
         <CircularProgress />
@@ -25,7 +25,7 @@ let Section = ({ data, type, title }) => {
           {!carouselToggle ? (
             <div className={styles.wrapper}>
               {data.map((item) => {
-                <Card data={item} type="album" />;
+                return <Card data={item} type={type} />;
               })}
             </div>
           ) : (
