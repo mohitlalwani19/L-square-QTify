@@ -2,8 +2,10 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/HeroSection";
 import Section from "./components/carousel/Section";
+import Accordion from "./components/Accordion";
 import { useState, useEffect } from "react";
 import { extractTopAlbumsData, extractNewAlbumsData } from "./apis/api";
+import Divider from "@mui/material/Divider";
 
 function App() {
   let [topAlbumsData, setTopAlbumsData] = useState([]);
@@ -40,6 +42,8 @@ function App() {
         <Section data={topAlbumsData} type="album" title="Top Albums" />
         <Section data={newAlbumsData} type="album" title="New Albums" />
       </div>
+      <Divider />
+      <Accordion />
     </div>
   );
 }
