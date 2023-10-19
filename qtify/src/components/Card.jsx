@@ -6,7 +6,7 @@ let Card = ({ data, type }) => {
   let getCard = (type) => {
     switch (type) {
       case "album": {
-        let { image, follows, title } = data;
+        let { image, follows, title, songs } = data;
         return (
           <Tooltip title={`${songs.length} songs`} placement="top" arrow>
             <div className={styles.cardFrame}>
