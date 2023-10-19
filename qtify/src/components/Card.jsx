@@ -25,6 +25,26 @@ let Card = ({ data, type }) => {
           </div>
         );
       }
+      case "song": {
+        let { image, likes, title } = data;
+        return (
+          <div className={styles.cardFrame}>
+            <div className={styles.card}>
+              <img src={image} alt="song poster" />
+              <div className={styles.banner}>
+                <Chip
+                  label={`${likes} Likes`}
+                  size="small"
+                  className={styles.chip}
+                />
+              </div>
+            </div>
+            <div className={styles.title}>
+              <p>{title}</p>
+            </div>
+          </div>
+        );
+      }
       default:
         return <div></div>;
     }
