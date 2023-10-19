@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Card.module.css";
-import { Chip } from "@mui/material";
+import { Chip, Tooltip } from "@mui/material";
 
 let Card = ({ data, type }) => {
   let getCard = (type) => {
@@ -8,21 +8,23 @@ let Card = ({ data, type }) => {
       case "album": {
         let { image, follows, title } = data;
         return (
-          <div className={styles.cardFrame}>
-            <div className={styles.card}>
-              <img src={image} alt="song poster" />
-              <div className={styles.banner}>
-                <Chip
-                  label={`${follows} Follows`}
-                  size="small"
-                  className={styles.chip}
-                />
+          <Tooltip title={`${songs.length} songs`} placement="top" arrow>
+            <div className={styles.cardFrame}>
+              <div className={styles.card}>
+                <img src={image} alt="song poster" />
+                <div className={styles.banner}>
+                  <Chip
+                    label={`${follows} Follows`}
+                    size="small"
+                    className={styles.chip}
+                  />
+                </div>
+              </div>
+              <div className={styles.title}>
+                <p>{title}</p>
               </div>
             </div>
-            <div className={styles.title}>
-              <p>{title}</p>
-            </div>
-          </div>
+          </Tooltip>
         );
       }
       case "song": {
